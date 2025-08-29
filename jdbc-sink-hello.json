@@ -1,0 +1,18 @@
+{
+  "name": "jdbc-sink-hello",
+  "config": {
+    "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+    "tasks.max": "1",
+    "topics": "hello-json",
+    "table.name.format": "hello_json",
+    "connection.url": "jdbc:postgresql://postgres:5432/kdb",
+    "connection.user": "kafka",
+    "connection.password": "kafka",
+    "auto.create": "true",
+    "auto.evolve": "true",
+    "insert.mode": "insert",
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schemas.enable": "false"
+  }
+}
